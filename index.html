@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and viewport responsiveness -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title of the page shown in browser tab -->
+    <title>Digital Tool Catalogue</title>
+
+    <!-- Google Fonts Import -->
+    <!-- Bebas Neue for Titles, Bree Serif for Subtitles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bree+Serif&display=swap" rel="stylesheet">
+
+    <!-- Internal CSS Styles -->
+    <style>
+        /* --- COLOR PALETTE DEFINITIONS --- */
+        :root {
+            --color-primary: #09bb88;      /* Teal Green */
+            --color-secondary: #41a552;    /* Medium Green */
+            --color-accent: #ffcc00;       /* Yellow */
+            --color-deep-blue: #1d3d8f;    /* Deep Blue */
+            --color-dark-accent: #0A2E36;  /* Dark Contrast */
+            
+            /* Font Families */
+            --font-title: 'Bebas Neue', 'Bahnschrift Semibold', sans-serif;
+            --font-subtitle: 'Bree Serif', 'Georgia', serif;
+            --font-body: 'Tahoma', sans-serif;
+        }
+
+        /* --- GLOBAL RESET & BASE STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-dark-accent);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3 {
+            font-family: var(--font-title);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 3rem;
+            color: var(--color-deep-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-family: var(--font-subtitle);
+            font-size: 1.5rem;
+            color: var(--color-secondary);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        /* --- LAYOUT UTILITIES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* --- HEADER SECTION --- */
+        header {
+            background-color: var(--color-deep-blue);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            color: var(--color-accent);
+        }
+
+        header p {
+            font-family: var(--font-subtitle);
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        /* --- MODULE GRID (Inspired by IDEO Tools) --- */
+        /* Creates a responsive grid layout */
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        /* --- CARD DESIGN --- */
+        .card {
+            background: white;
+            border-left: 5px solid var(--color-primary);
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.15);
+            border-left-color: var(--color-accent);
+        }
+
+        .card h3 {
+            font-size: 2rem;
+            color: var(--color-deep-blue);
+            margin-bottom: 10px;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: white;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: var(--color-deep-blue);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            align-self: flex-start;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--color-secondary);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--color-dark-accent);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* --- RESPONSIVE ADJUSTMENTS --- */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .module-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section: Main Title -->
+    <header>
+        <div class="container">
+            <h1>Digital Tool Catalogue</h1>
+            <p>A curated collection of resources for modern problem solving</p>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container">
+        
+        <!-- Introduction Section -->
+        <section id="intro">
+            <h2>Welcome</h2>
+            <p class="subtitle">Explore our six core modules designed to streamline your workflow.</p>
+            <p>This catalogue serves as a central hub for digital tools, organized into distinct modules to help you find exactly what you need for your next project. Each module focuses on a specific stage of the development lifecycle.</p>
+        </section>
+
+        <!-- Modules Grid Section -->
+        <section id="modules">
+            <h2>The Modules</h2>
+            <p class="subtitle">Select a module to view available tools.</p>
+            
+            <div class="module-grid">
+                
+                <!-- Module 1 Card -->
+                <article class="card">
+                    <div>
+                        <span class="card-tag">Module 1</span>
+                        <h3>Discovery</h3>
+                        <p>Tools for research, user interviews, and understanding the problem space. Start here to gather insights.</p>
+                    </div>
+                    <a href="#" class="btn">View Tools</a>
+                </article>
+
+                <!-- Module 2 Card -->
+                <article class="card">
+                    <div>
+                        <span class="card-tag">Module 2</span>
+                        <h3>Ideation</h3>
+                        <p>Brainstorming frameworks and collaborative whiteboarding tools to generate innovative solutions.</p>
+                    </div>
+                    <a href="#" class="btn">View Tools</a>
+                </article>
+
+                <!-- Module 3 Card -->
+                <article class="card">
+                    <div>
+                        <span class="card-tag">Module 3</span>
+                        <h3>Prototyping</h3>
+                        <p>Wireframing and rapid prototyping software to visualize your ideas before building.</p>
+                    </div>
+                    <a href="#" class="btn">View Tools</a>
+                </article>
+
+                <!-- Module 4 Card -->
+                <article class="card">
+                    <div>
+                        <span class="card-tag">Module 4</span>
+                        <h3>Development</h3>
+                        <p>Code editors, version control systems, and deployment pipelines for engineering teams.</p>
+                    </div>
+                    <a href="#" class="btn">View Tools</a>
+                </article>
+
+                <!-- Module 5 Card -->
+                <article class="card">
+                    <div>
+                        <span class="card-tag">Module 5</span>
+                        <h3>Testing</h3>
+                        <p>QA automation, user testing platforms, and analytics tools to validate your product.</p>
+                    </div>
+                    <a href="#" class="btn">View Tools</a>
+                </article>
+
+                <!-- Module 6 Card -->
+                <article class="card">
+                    <div>
+                        <span class="card-tag">Module 6</span>
+                        <h3>Launch</h3>
+                        <p>Marketing automation, social media schedulers, and launch checklists for go-to-market strategies.</p>
+                    </div>
+                    <a href="#" class="btn">View Tools</a>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Digital Tool Catalogue. Hosted on GitHub Pages.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
